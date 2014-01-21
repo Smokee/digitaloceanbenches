@@ -1,43 +1,388 @@
+Distro:
+CentOS release 6.5 (Final)
+Kernel \r on an \m
+CPU Info:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 2
+model name	: QEMU Virtual CPU version 1.0
+stepping	: 3
+cpu MHz		: 1999.999
+cache size	: 4096 KB
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 4
+wp		: yes
+flags		: fpu de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pse36 clflush mmx fxsr sse sse2 syscall nx lm up rep_good unfair_spinlock pni vmx cx16 popcnt hypervisor lahf_lm
+bogomips	: 3999.99
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+Disk space: 
+Filesystem     1K-blocks    Used Available Use% Mounted on
+/dev/vda        30963708 1281752  28109092   5% /
+tmpfs             510192       0    510192   0% /dev/shm
+total           31473900 1281752  28619284   5%
+Free: 
+             total       used       free     shared    buffers     cached
+Mem:       1020388     560628     459760          0      30140     438292
+-/+ buffers/cache:      92196     928192
+Swap:            0          0          0
+dd 1Mx1k fdatasync: 1024+0 records in
+1024+0 records out
+1073741824 bytes (1.1 GB) copied, 6.43104 s, 167 MB/s
+dd 64kx16k fdatasync: 16384+0 records in
+16384+0 records out
+1073741824 bytes (1.1 GB) copied, 4.68897 s, 229 MB/s
+dd 1Mx1k dsync: 1024+0 records in
+1024+0 records out
+1073741824 bytes (1.1 GB) copied, 10.6005 s, 101 MB/s
+dd 64kx16k dsync: 16384+0 records in
+16384+0 records out
+1073741824 bytes (1.1 GB) copied, 46.192 s, 23.2 MB/s
+cc -std=c99 -g -Wall -Wextra -pedantic -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -DVERSION=\"0.6\" -c -o ioping.o ioping.c
+cc -o ioping ioping.o -std=c99 -g -Wall -Wextra -pedantic -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -lm
+IOPing I/O: 4096 bytes from . (ext4 /dev/vda): request=1 time=0.1 ms
+4096 bytes from . (ext4 /dev/vda): request=2 time=0.2 ms
+4096 bytes from . (ext4 /dev/vda): request=3 time=0.2 ms
+4096 bytes from . (ext4 /dev/vda): request=4 time=0.2 ms
+4096 bytes from . (ext4 /dev/vda): request=5 time=0.3 ms
+4096 bytes from . (ext4 /dev/vda): request=6 time=0.3 ms
+4096 bytes from . (ext4 /dev/vda): request=7 time=0.2 ms
+4096 bytes from . (ext4 /dev/vda): request=8 time=0.2 ms
+4096 bytes from . (ext4 /dev/vda): request=9 time=0.2 ms
+4096 bytes from . (ext4 /dev/vda): request=10 time=0.4 ms
+
+--- . (ext4 /dev/vda) ioping statistics ---
+10 requests completed in 9003.9 ms, 4427 iops, 17.3 mb/s
+min/avg/max/mdev = 0.1/0.2/0.4/0.1 ms
+IOPing seek rate: 
+--- . (ext4 /dev/vda) ioping statistics ---
+11532 requests completed in 3000.1 ms, 6901 iops, 27.0 mb/s
+min/avg/max/mdev = 0.1/0.1/0.5/0.0 ms
+IOPing sequential: 
+--- . (ext4 /dev/vda) ioping statistics ---
+4832 requests completed in 3000.1 ms, 2199 iops, 549.7 mb/s
+min/avg/max/mdev = 0.3/0.5/6.1/0.1 ms
+IOPing cached: 
+--- . (ext4 /dev/vda) ioping statistics ---
+32190 requests completed in 3000.1 ms, 205867 iops, 804.2 mb/s
+min/avg/max/mdev = 0.0/0.0/1.3/0.0 ms
+FIO_VERSION = fio-2.0.9
+    DEP .depend
+    CC gettime.o
+    CC fio.o
+    CC ioengines.o
+    CC init.o
+    CC stat.o
+    CC log.o
+    CC time.o
+    CC filesetup.o
+    CC eta.o
+    CC verify.o
+    CC memory.o
+    CC io_u.o
+    CC parse.o
+    CC mutex.o
+    CC options.o
+    CC rbtree.o
+    CC smalloc.o
+    CC filehash.o
+    CC profile.o
+    CC debug.o
+    CC lib/rand.o
+    CC lib/num2str.o
+    CC lib/ieee754.o
+    CC crc/crc16.o
+    CC crc/crc32.o
+    CC crc/crc32c.o
+    CC crc/crc32c-intel.o
+    CC crc/crc64.o
+    CC crc/crc7.o
+    CC crc/md5.o
+    CC crc/sha1.o
+    CC crc/sha256.o
+    CC crc/sha512.o
+    CC engines/cpu.o
+    CC engines/mmap.o
+    CC engines/sync.o
+    CC engines/null.o
+    CC engines/net.o
+    CC memalign.o
+    CC server.o
+    CC client.o
+    CC iolog.o
+    CC backend.o
+    CC libfio.o
+    CC flow.o
+    CC diskutil.o
+    CC fifo.o
+    CC blktrace.o
+    CC helpers.o
+    CC cgroup.o
+    CC trim.o
+    CC engines/libaio.o
+    CC engines/posixaio.o
+    CC engines/sg.o
+    CC engines/splice.o
+    CC engines/syslet-rw.o
+    CC engines/guasi.o
+    CC engines/binject.o
+    CC engines/rdma.o
+    CC profiles/tiobench.o
+    CC fio
+FIO random reads:
+randomreads: (g=0): rw=randread, bs=4K-4K/4K-4K, ioengine=libaio, iodepth=64
+fio-2.0.9
+Starting 1 process
+randomreads: Laying out IO file(s) (1 file(s) / 1024MB)
+
+randomreads: (groupid=0, jobs=1): err= 0: pid=10594: Tue Jan 21 09:19:00 2014
+  read : io=1024.3MB, bw=194841KB/s, iops=48710 , runt=  5383msec
+  cpu          : usr=12.58%, sys=82.87%, ctx=21583, majf=0, minf=89
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.1%, >=64=0.0%
+     issued    : total=r=262207/w=0/d=0, short=r=0/w=0/d=0
+
+Run status group 0 (all jobs):
+   READ: io=1024.3MB, aggrb=194840KB/s, minb=194840KB/s, maxb=194840KB/s, mint=5383msec, maxt=5383msec
+
+Disk stats (read/write):
+  vda: ios=252012/3, merge=0/0, ticks=16515/1, in_queue=16305, util=91.97%
+Done
+FIO random writes:
+randomwrites: (g=0): rw=randwrite, bs=4K-4K/4K-4K, ioengine=libaio, iodepth=64
+fio-2.0.9
+Starting 1 process
+
+randomwrites: (groupid=0, jobs=1): err= 0: pid=10598: Tue Jan 21 09:19:15 2014
+  write: io=1024.3MB, bw=70647KB/s, iops=17661 , runt= 14846msec
+  cpu          : usr=7.30%, sys=36.21%, ctx=35574, majf=0, minf=25
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.1%, >=64=0.0%
+     issued    : total=r=0/w=262207/d=0, short=r=0/w=0/d=0
+
+Run status group 0 (all jobs):
+  WRITE: io=1024.3MB, aggrb=70647KB/s, minb=70647KB/s, maxb=70647KB/s, mint=14846msec, maxt=14846msec
+
+Disk stats (read/write):
+  vda: ios=0/262211, merge=0/2, ticks=0/866988, in_queue=869525, util=99.42%
+Done
+Download Cachefly: 50.1MB/s
+Download Linode, Atlanta, GA, USA: 48.6MB/s
+Download Linode, Dallas, TX, USA: 40.1MB/s
+Download Linode, Tokyo, JP: 1.53MB/s
+Download Linode, London, UK: 25.8MB/s
+Download OVH, Paris, France: 16.8MB/s
+Download SmartDC, Rotterdam, Netherlands: 17.7MB/s
+Download Hetzner, Nuernberg, Germany: 6.71MB/s
+Download iiNet, Perth, WA, Australia: 3.56MB/s
+Download MammothVPS, Sydney, Australia: 1022KB/s
+Download Leaseweb, Haarlem, NL: 24.1MB/s
+Download Leaseweb, Manassas, VA, USA: 11.5MB/s
+Download Softlayer, Singapore: 10.5MB/s
+Download Softlayer, Seattle, WA, USA: 41.1MB/s
+Download Softlayer, San Jose, CA, USA: 34.1MB/s
+Download Softlayer, Washington, DC, USA: 85.9MB/s
+Traceroute (cachefly.cachefly.net): traceroute to cachefly.cachefly.net (205.234.175.175), 30 hops max, 60 byte packets
+ 1  162.243.215.253 (162.243.215.253)  0.324 ms  0.294 ms  0.389 ms
+ 2  192.241.164.241 (192.241.164.241)  2.418 ms  2.415 ms  2.385 ms
+ 3  xe-3-0-6.ar2.nyc3.us.nlayer.net (69.31.95.133)  1.585 ms  1.678 ms  1.703 ms
+ 4  vlan-76.ar2.ewr1.us.nlayer.net (69.31.94.72)  2.939 ms  2.924 ms  4.381 ms
+ 5  vip1.G-anycast1.cachefly.net (205.234.175.175)  0.755 ms  1.069 ms  0.935 ms
+Pings (cachefly.cachefly.net): PING vip1.g.cachefly.net (205.234.175.175) 56(84) bytes of data.
+64 bytes from vip1.G-anycast1.cachefly.net (205.234.175.175): icmp_seq=1 ttl=60 time=0.834 ms
+64 bytes from vip1.G-anycast1.cachefly.net (205.234.175.175): icmp_seq=2 ttl=60 time=1.26 ms
+64 bytes from vip1.G-anycast1.cachefly.net (205.234.175.175): icmp_seq=3 ttl=60 time=0.935 ms
+64 bytes from vip1.G-anycast1.cachefly.net (205.234.175.175): icmp_seq=4 ttl=60 time=0.787 ms
+64 bytes from vip1.G-anycast1.cachefly.net (205.234.175.175): icmp_seq=5 ttl=60 time=1.10 ms
+64 bytes from vip1.G-anycast1.cachefly.net (205.234.175.175): icmp_seq=6 ttl=60 time=0.963 ms
+64 bytes from vip1.G-anycast1.cachefly.net (205.234.175.175): icmp_seq=7 ttl=60 time=1.28 ms
+64 bytes from vip1.G-anycast1.cachefly.net (205.234.175.175): icmp_seq=8 ttl=60 time=1.02 ms
+64 bytes from vip1.G-anycast1.cachefly.net (205.234.175.175): icmp_seq=9 ttl=60 time=1.12 ms
+64 bytes from vip1.G-anycast1.cachefly.net (205.234.175.175): icmp_seq=10 ttl=60 time=0.834 ms
+
+--- vip1.g.cachefly.net ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9011ms
+rtt min/avg/max/mdev = 0.787/1.015/1.288/0.172 ms
+gcc -o ./pgms/arithoh -DTIME -Wall -pedantic -ansi -O2 -fomit-frame-pointer -fforce-addr -ffast-math -Wall -Darithoh ./src/arith.c
+gcc -o ./pgms/register -DTIME -Wall -pedantic -ansi -O2 -fomit-frame-pointer -fforce-addr -ffast-math -Wall -Ddatum='register int' ./src/arith.c
+gcc -o ./pgms/short -DTIME -Wall -pedantic -ansi -O2 -fomit-frame-pointer -fforce-addr -ffast-math -Wall -Ddatum=short ./src/arith.c
+gcc -o ./pgms/int -DTIME -Wall -pedantic -ansi -O2 -fomit-frame-pointer -fforce-addr -ffast-math -Wall -Ddatum=int ./src/arith.c
+gcc -o ./pgms/long -DTIME -Wall -pedantic -ansi -O2 -fomit-frame-pointer -fforce-addr -ffast-math -Wall -Ddatum=long ./src/arith.c
+gcc -o ./pgms/float -DTIME -Wall -pedantic -ansi -O2 -fomit-frame-pointer -fforce-addr -ffast-math -Wall -Ddatum=float ./src/arith.c
+gcc -o ./pgms/double -DTIME -Wall -pedantic -ansi -O2 -fomit-frame-pointer -fforce-addr -ffast-math -Wall -Ddatum=double ./src/arith.c
+gcc -o ./pgms/hanoi -DTIME -Wall -pedantic -ansi -O2 -fomit-frame-pointer -fforce-addr -ffast-math -Wall ./src/hanoi.c
+gcc -o ./pgms/syscall -DTIME -Wall -pedantic -ansi -O2 -fomit-frame-pointer -fforce-addr -ffast-math -Wall ./src/syscall.c
+./src/syscall.c: In function ‘main’:
+./src/syscall.c:93: warning: null argument where non-null required (argument 2)
+gcc -o ./pgms/context1 -DTIME -Wall -pedantic -ansi -O2 -fomit-frame-pointer -fforce-addr -ffast-math -Wall ./src/context1.c
+gcc -o ./pgms/pipe -DTIME -Wall -pedantic -ansi -O2 -fomit-frame-pointer -fforce-addr -ffast-math -Wall ./src/pipe.c
+gcc -o ./pgms/spawn -DTIME -Wall -pedantic -ansi -O2 -fomit-frame-pointer -fforce-addr -ffast-math -Wall ./src/spawn.c
+gcc -o ./pgms/execl -DTIME -Wall -pedantic -ansi -O2 -fomit-frame-pointer -fforce-addr -ffast-math -Wall ./src/execl.c
+cd ./src; gcc -c -DTIME -Wall -pedantic -ansi -DHZ= -O2 -fomit-frame-pointer -fforce-addr -ffast-math -Wall dhry_1.c
+cd ./src; gcc -c -DTIME -Wall -pedantic -ansi -DHZ= -O2 -fomit-frame-pointer -fforce-addr -ffast-math -Wall dhry_2.c
+gcc -o ./pgms/dhry2 -DTIME -Wall -pedantic -ansi -O2 -fomit-frame-pointer -fforce-addr -ffast-math -Wall ./src/dhry_1.o ./src/dhry_2.o
+cd ./src; rm -f dhry_1.o dhry_2.o
+cd ./src; gcc -c -DTIME -Wall -pedantic -ansi -DREG=register -DHZ= -O2 -fomit-frame-pointer -fforce-addr -ffast-math -Wall dhry_1.c -o dhry_1_reg.o
+cd ./src; gcc -c -DTIME -Wall -pedantic -ansi -DREG=register -DHZ= -O2 -fomit-frame-pointer -fforce-addr -ffast-math -Wall dhry_2.c -o dhry_2_reg.o
+gcc -o ./pgms/dhry2reg -DTIME -Wall -pedantic -ansi -O2 -fomit-frame-pointer -fforce-addr -ffast-math -Wall ./src/dhry_1_reg.o ./src/dhry_2_reg.o
+cd ./src; rm -f dhry_1_reg.o dhry_2_reg.o
+gcc -o ./pgms/looper -DTIME -Wall -pedantic -ansi -O2 -fomit-frame-pointer -fforce-addr -ffast-math -Wall ./src/looper.c
+gcc -o ./pgms/fstime -DTIME -Wall -pedantic -ansi -O2 -fomit-frame-pointer -fforce-addr -ffast-math -Wall ./src/fstime.c
+gcc -o ./pgms/whetstone-double -DTIME -Wall -pedantic -ansi -O2 -fomit-frame-pointer -fforce-addr -ffast-math -Wall -DDP -DUNIX -DUNIXBENCH ./src/whets.c -lm
+make all
+make[1]: Entering directory `/root/sb-bench/UnixBench-5.1.3'
+Checking distribution of files
+./pgms  exists
+./src  exists
+./testdir  exists
+./results  exists
+make[1]: Leaving directory `/root/sb-bench/UnixBench-5.1.3'
+sh: 3dinfo: command not found
+
+   #    #  #    #  #  #    #          #####   ######  #    #   ####   #    #
+   #    #  ##   #  #   #  #           #    #  #       ##   #  #    #  #    #
+   #    #  # #  #  #    ##            #####   #####   # #  #  #       ######
+   #    #  #  # #  #    ##            #    #  #       #  # #  #       #    #
+   #    #  #   ##  #   #  #           #    #  #       #   ##  #    #  #    #
+    ####   #    #  #  #    #          #####   ######  #    #   ####   #    #
+
+   Version 5.1.3                      Based on the Byte Magazine Unix Benchmark
+
+   Multi-CPU version                  Version 5 revisions by Ian Smith,
+                                      Sunnyvale, CA, USA
+   January 13, 2011                   johantheghost at yahoo period com
+
+
+1 x Dhrystone 2 using register variables  1 2 3 4 5 6 7 8 9 10
+
+1 x Double-Precision Whetstone  1 2 3 4 5 6 7 8 9 10
+
+1 x Execl Throughput  1 2 3
+
+1 x File Copy 1024 bufsize 2000 maxblocks  1 2 3
+
+1 x File Copy 256 bufsize 500 maxblocks  1 2 3
+
+1 x File Copy 4096 bufsize 8000 maxblocks  1 2 3
+
+1 x Pipe Throughput  1 2 3 4 5 6 7 8 9 10
+
+1 x Pipe-based Context Switching  1 2 3 4 5 6 7 8 9 10
+
+1 x Process Creation  1 2 3
+
+1 x System Call Overhead  1 2 3 4 5 6 7 8 9 10
+
+1 x Shell Scripts (1 concurrent)  1 2 3
+
+1 x Shell Scripts (8 concurrent)  1 2 3
+
+1 x Dhrystone 2 using register variables  1 2 3 4 5 6 7 8 9 10
+
+1 x Double-Precision Whetstone  1 2 3 4 5 6 7 8 9 10
+
+1 x Execl Throughput  1 2 3
+
+1 x File Copy 1024 bufsize 2000 maxblocks  1 2 3
+
+1 x File Copy 256 bufsize 500 maxblocks  1 2 3
+
+1 x File Copy 4096 bufsize 8000 maxblocks  1 2 3
+
+1 x Pipe Throughput  1 2 3 4 5 6 7 8 9 10
+
+1 x Pipe-based Context Switching  1 2 3 4 5 6 7 8 9 10
+
+1 x Process Creation  1 2 3
+
+1 x System Call Overhead  1 2 3 4 5 6 7 8 9 10
+
+1 x Shell Scripts (1 concurrent)  1 2 3
+
+1 x Shell Scripts (8 concurrent)  1 2 3
+
 ========================================================================
    BYTE UNIX Benchmarks (Version 5.1.3)
 
    System: digitalocean.googlewarriors.com: GNU/Linux
-   OS: GNU/Linux -- 2.6.32-431.1.2.0.1.el6.x86_64 -- #1 SMP Fri Dec 13 13:06:13                                                  UTC 2013
+   OS: GNU/Linux -- 2.6.32-431.1.2.0.1.el6.x86_64 -- #1 SMP Fri Dec 13 13:06:13 UTC 2013
    Machine: x86_64 (x86_64)
    Language: en_US.utf8 (charmap="UTF-8", collate="UTF-8")
-   CPU 0: QEMU Virtual CPU version 1.0 (4600.0 bogomips)
-          x86-64, MMX, Physical Address Ext, SYSENTER/SYSEXIT, SYSCALL/SYSRET, I                                                 ntel virtualization
-   08:30:46 up 20:08,  1 user,  load average: 0.07, 0.03, 0.01; runlevel 3
+   CPU 0: QEMU Virtual CPU version 1.0 (4000.0 bogomips)
+          x86-64, MMX, Physical Address Ext, SYSENTER/SYSEXIT, SYSCALL/SYSRET, Intel virtualization
+   09:23:48 up 11 min,  1 user,  load average: 0.09, 0.23, 0.16; runlevel 3
 
 ------------------------------------------------------------------------
-Benchmark Run: Tue Jan 21 2014 08:30:46 - 08:58:57
+Benchmark Run: Tue Jan 21 2014 09:23:48 - 09:51:43
 1 CPU in system; running 1 parallel copy of tests
 
-Dhrystone 2 using register variables       27892065.8 lps   (10.0 s, 7 samples)
-Double-Precision Whetstone                     3094.9 MWIPS (9.9 s, 7 samples)
-Execl Throughput                               3766.6 lps   (30.0 s, 2 samples)
-File Copy 1024 bufsize 2000 maxblocks        739238.2 KBps  (30.0 s, 2 samples)
-File Copy 256 bufsize 500 maxblocks          210965.2 KBps  (30.0 s, 2 samples)
-File Copy 4096 bufsize 8000 maxblocks       1544872.7 KBps  (30.0 s, 2 samples)
-Pipe Throughput                             1679602.2 lps   (10.0 s, 7 samples)
-Pipe-based Context Switching                 297196.7 lps   (10.0 s, 7 samples)
-Process Creation                               9717.2 lps   (30.0 s, 2 samples)
-Shell Scripts (1 concurrent)                   4461.8 lpm   (60.0 s, 2 samples)
-Shell Scripts (8 concurrent)                    573.7 lpm   (60.0 s, 2 samples)
-System Call Overhead                        2084424.3 lps   (10.0 s, 7 samples)
+Dhrystone 2 using register variables       26011485.0 lps   (10.0 s, 7 samples)
+Double-Precision Whetstone                     2483.3 MWIPS (9.7 s, 7 samples)
+Execl Throughput                               2548.9 lps   (29.7 s, 2 samples)
+File Copy 1024 bufsize 2000 maxblocks        422522.4 KBps  (30.0 s, 2 samples)
+File Copy 256 bufsize 500 maxblocks          155873.3 KBps  (30.0 s, 2 samples)
+File Copy 4096 bufsize 8000 maxblocks        974035.0 KBps  (30.0 s, 2 samples)
+Pipe Throughput                             1279042.1 lps   (10.0 s, 7 samples)
+Pipe-based Context Switching                 189698.1 lps   (10.0 s, 7 samples)
+Process Creation                               7358.0 lps   (30.0 s, 2 samples)
+Shell Scripts (1 concurrent)                   2702.0 lpm   (60.0 s, 2 samples)
+Shell Scripts (8 concurrent)                    338.8 lpm   (60.1 s, 2 samples)
+System Call Overhead                        1553930.2 lps   (10.0 s, 7 samples)
 
 System Benchmarks Index Values               BASELINE       RESULT    INDEX
-Dhrystone 2 using register variables         116700.0   27892065.8   2390.1
-Double-Precision Whetstone                       55.0       3094.9    562.7
-Execl Throughput                                 43.0       3766.6    876.0
-File Copy 1024 bufsize 2000 maxblocks          3960.0     739238.2   1866.8
-File Copy 256 bufsize 500 maxblocks            1655.0     210965.2   1274.7
-File Copy 4096 bufsize 8000 maxblocks          5800.0    1544872.7   2663.6
-Pipe Throughput                               12440.0    1679602.2   1350.2
-Pipe-based Context Switching                   4000.0     297196.7    743.0
-Process Creation                                126.0       9717.2    771.2
-Shell Scripts (1 concurrent)                     42.4       4461.8   1052.3
-Shell Scripts (8 concurrent)                      6.0        573.7    956.1
-System Call Overhead                          15000.0    2084424.3   1389.6
+Dhrystone 2 using register variables         116700.0   26011485.0   2228.9
+Double-Precision Whetstone                       55.0       2483.3    451.5
+Execl Throughput                                 43.0       2548.9    592.8
+File Copy 1024 bufsize 2000 maxblocks          3960.0     422522.4   1067.0
+File Copy 256 bufsize 500 maxblocks            1655.0     155873.3    941.8
+File Copy 4096 bufsize 8000 maxblocks          5800.0     974035.0   1679.4
+Pipe Throughput                               12440.0    1279042.1   1028.2
+Pipe-based Context Switching                   4000.0     189698.1    474.2
+Process Creation                                126.0       7358.0    584.0
+Shell Scripts (1 concurrent)                     42.4       2702.0    637.3
+Shell Scripts (8 concurrent)                      6.0        338.8    564.7
+System Call Overhead                          15000.0    1553930.2   1036.0
                                                                    ========
-System Benchmarks Index Score                                        1190.2
+System Benchmarks Index Score                                         830.0
+
+------------------------------------------------------------------------
+Benchmark Run: Tue Jan 21 2014 09:51:43 - 10:19:52
+1 CPU in system; running 1 parallel copy of tests
+
+Dhrystone 2 using register variables       20049846.4 lps   (10.0 s, 7 samples)
+Double-Precision Whetstone                     2513.6 MWIPS (10.0 s, 7 samples)
+Execl Throughput                               2628.1 lps   (29.6 s, 2 samples)
+File Copy 1024 bufsize 2000 maxblocks        353377.1 KBps  (30.0 s, 2 samples)
+File Copy 256 bufsize 500 maxblocks          142071.4 KBps  (30.0 s, 2 samples)
+File Copy 4096 bufsize 8000 maxblocks        915024.5 KBps  (30.0 s, 2 samples)
+Pipe Throughput                             1088779.3 lps   (10.0 s, 7 samples)
+Pipe-based Context Switching                 185891.1 lps   (10.0 s, 7 samples)
+Process Creation                               7521.3 lps   (30.0 s, 2 samples)
+Shell Scripts (1 concurrent)                   3192.4 lpm   (60.0 s, 2 samples)
+Shell Scripts (8 concurrent)                    393.0 lpm   (60.1 s, 2 samples)
+System Call Overhead                        1698376.2 lps   (10.0 s, 7 samples)
+
+System Benchmarks Index Values               BASELINE       RESULT    INDEX
+Dhrystone 2 using register variables         116700.0   20049846.4   1718.1
+Double-Precision Whetstone                       55.0       2513.6    457.0
+Execl Throughput                                 43.0       2628.1    611.2
+File Copy 1024 bufsize 2000 maxblocks          3960.0     353377.1    892.4
+File Copy 256 bufsize 500 maxblocks            1655.0     142071.4    858.4
+File Copy 4096 bufsize 8000 maxblocks          5800.0     915024.5   1577.6
+Pipe Throughput                               12440.0    1088779.3    875.2
+Pipe-based Context Switching                   4000.0     185891.1    464.7
+Process Creation                                126.0       7521.3    596.9
+Shell Scripts (1 concurrent)                     42.4       3192.4    752.9
+Shell Scripts (8 concurrent)                      6.0        393.0    655.1
+System Call Overhead                          15000.0    1698376.2   1132.3
+                                                                   ========
+System Benchmarks Index Score                                         809.0
+
+=====================================================================================================================
+=====================================================================================================================
